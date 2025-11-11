@@ -934,6 +934,7 @@ services:
       - cluster.routing.allocation.disk.watermark.low=5gb
       - cluster.routing.allocation.disk.watermark.high=3gb
       - cluster.routing.allocation.disk.watermark.flood_stage=2gb
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
     ulimits:
       memlock:
         soft: -1
@@ -956,7 +957,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 8g
+          memory: 2g
 
   lightrag:
     image: ghcr.io/hkuds/lightrag:latest
